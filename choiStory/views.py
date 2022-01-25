@@ -9,3 +9,9 @@ def main(request):
 
 def aboutMe(request):
     return render(request, 'choiStory/aboutMe.html')
+
+def myProjects(request):
+    return render(request, 'choiStory/myProjects.html')
+
+def contactMe(request):
+    return render(request, 'choiStory/contactMe.html')
