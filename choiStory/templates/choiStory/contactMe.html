@@ -10,20 +10,89 @@
     <title>YEONJONG CHOI</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+    <style>
+        .contactForm{
+            font-family: Times New Roman;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border-width: 1px 1px 1px 1px;
+            border-color: black;
+            border-style: solid;
+            border-radius: 25px;
+            display: inline-block;
+            justify-content: left;
+            text-align: left;
+        }
+        .halfLeftCf{
+            margin-top: 20px;
+            margin-left:5%;
+            float: left;
+        }
+        .halfRightCf{
+            margin-top: 20px;
+            margin-right:5%;
+            float: right;
+        }
+        #input-name{
+            border-width: 0px 0px 1px 0px;
+            border-color: black;
+            border-style: solid;
+        }
+        #input-email{
+            border-width: 0px 0px 1px 0px;
+            border-color: black;
+            border-style: solid;
+        }
+        #input-subject{
+            border-width: 0px 0px 1px 0px;
+            border-color: black;
+            border-style: solid;
+        }
+        #input-submit{
+            width:50%;
+            margin-top: 20px;
+            margin-left:25%;
+            margin-right:25%;
+        }
+        #form{
+            position:relative;
+            width: 550px;
+            margin:auto;
+        }
+        textarea{
+            overflow:hidden;
+            height: 150px;
+            width:250px;
+            font-size:12px;
+            margin: auto;
+            display:block;
+            border-radius:10px;
+            border:2px solid #556677;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         {% include 'choiStory/HeaderAndMenu.html' %}
-        <section class="content">
-            <nav>
-                <ul>
-                    <li>html</li>
-                    <li>css</li>
-                    <li>javascript</li>
-                </ul>
-            </nav>
-            <main>
-                CONTACT_ME CONTACT_CHOI
+        <section class="content" id="contentContactMe">
+            <main class = "contactForm">
+                <div id = "form">
+                    <h1>Contact Me</h1>
+                    <form class="cf" action="https://formsubmit.co/cpalove3@gmail.com" method="POST">
+                      <div class="halfLeftCf">
+                        <input type="text" id="input-name" name="name" placeholder="Name" required> </br></br>
+                        <input type="email" id="input-email" name="email" placeholder="Email Address" required></br></br>
+                        <input type="text" id="input-subject" placeholder="Subject" required></br></br>
+                      </div>
+                      <div class="halfRightCf">
+                        <textarea name="message" type="text" id="input-message" placeholder="Message" required></textarea>
+                      </div>
+                      <input type="submit" value="Submit" class="btn btn-outline-secondary" id="input-submit">
+                    </form>
+                </div>
             </main>
         </section>
         <footer>

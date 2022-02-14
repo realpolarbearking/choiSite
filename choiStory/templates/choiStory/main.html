@@ -14,14 +14,65 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
     <title>YEONJONG CHOI</title>
+    <style>
+        #choiMain{
+            font-family: Times New Roman;
+            font-size: 20px;
+            margin: auto;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            text-align: center;
+        }
+        .introBox {
+            position: relative;
+            align-items: center;
+            margin: auto;
+            border: 1px solid #bbb;
+        }
+
+        .introBox :after {
+            display: block;
+            content: "";
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            border-top: 3px solid black;
+            border-right: 3px solid black;
+        }
+
+        .introBox :before {
+            display: block;
+            content: "";
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            bottom: -5px;
+            left: -5px;
+            border-bottom: 3px solid black;
+            border-left: 3px solid black;
+        }
+        .introContent{
+             margin-top: 25px;
+             margin-bottom: 25px;
+             margin-left: 50px;
+             margin-right: 50px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         {% include 'choiStory/HeaderAndMenu.html' %}
         <section class="content">
-            <main>
-                HELLO WORLD!
-                WELCOME TO MY WORLD!
+            <main id = "choiMain">
+                <div class="introBox">
+                    <div class="introContent">
+                    Hello, I'm <b>YEONJONG CHOI</b>!</br>
+                    Welcome to my website!</br>
+                    I am a recent graduate from <u>York Unviersity, Toronto ON, CA</u>.
+                    </div>
+                </div>
             </main>
         </section>
         <footer>

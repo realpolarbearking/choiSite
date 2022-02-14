@@ -10,20 +10,24 @@
     <title>YEONJONG CHOI</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+    <style>
+        #pdfMain{
+            text-align: center;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
+<!----------------------------------------------
+- {% static 'files/onReceiveTRdata.pdf' %}
+----------------------------------------------->
     <div class="container">
         {% include 'choiStory/HeaderAndMenu.html' %}
         <section class="content">
-            <nav>
-                <ul>
-                    <li>html</li>
-                    <li>css</li>
-                    <li>javascript</li>
-                </ul>
-            </nav>
-            <main>
-                ABOUT_ME ABOUT_CHOI
+            <main id = "pdfMain">
+                <iframe src="{% static 'files/resume.pdf' %}" width="100%" height="1000px">
+                </iframe>
             </main>
         </section>
         <footer>

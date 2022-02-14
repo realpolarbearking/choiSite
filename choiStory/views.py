@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404, render
+from .models import blog
 from django.http import HttpResponse
 from django.http import Http404
 from django.template import loader
@@ -11,7 +12,8 @@ def aboutMe(request):
     return render(request, 'choiStory/aboutMe.html')
 
 def myProjects(request):
-    return render(request, 'choiStory/myProjects.html')
+    posts = blog.objects.all()
+    return render(request, 'choiStory/myProjects.html', {'posts': posts})
 
 def contactMe(request):
     return render(request, 'choiStory/contactMe.html')
