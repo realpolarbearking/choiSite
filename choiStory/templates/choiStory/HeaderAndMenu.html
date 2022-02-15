@@ -1,0 +1,34 @@
+<header>
+    <div class="banner">
+        <br />
+        <h1>YEONJONG CHOI</h1>
+        <hr style="height:1px;margin:auto;border-width:0;width:15%;color:black;background-color:black">
+        <br />
+        <div id = 'personalInfo'>
+            <h6><span class="material-icons-outlined">phone_android</span> +1 (647) 460-8761</h6>
+            <h6><span class="material-icons-outlined">email</span> cpalove3@gmail.com</h6>
+        </div>
+        <br />
+    </div>
+</header>
+<div class="topnav" id = 'topMenu'>
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link {% if request.resolver_match.url_name == 'main' %}nav-link active{% endif %}" id="home" href="/"> HOME </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% if request.resolver_match.url_name == 'resume' %}nav-link active{% endif %}" href="{% url 'choiStory:resume' %}">RESUME</a>
+        </li>
+        <li class="nav-item">
+            <a id = "mp" class="nav-link {% if request.resolver_match.url_name == 'myProjects'%}
+            nav-link active{% endif %}" href="{% url 'choiStory:myProjects' %}">MY PROJECTS</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% if request.resolver_match.url_name == 'contactMe'%}nav-link active{% endif %}" href="{% url 'choiStory:contactMe' %}">CONTACT ME</a>
+        </li>
+    </ul>
+</div>
+
+<script>
+
+</script>

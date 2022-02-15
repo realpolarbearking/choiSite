@@ -17,3 +17,7 @@ def myProjects(request):
 
 def contactMe(request):
     return render(request, 'choiStory/contactMe.html')
+
+def post_detail(request, id):
+	post = get_object_or_404(blog, id=id)
+	return render(request, 'choiStory/post_detail.html', {"post": post})
