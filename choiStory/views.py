@@ -34,6 +34,7 @@ def contactMe(request):
         From: {}
         '''.format(data["Message"], data["E-MAIL"])
         send_mail(data["Subject"], message, '', ["kk6962289@gmail.com"])
+        return HttpResponse('Your message has been sent. Thank you.')
 
     return render(request, 'choiStory/contactMe.html', {})
 
