@@ -3,6 +3,7 @@ from .models import blog
 from django.http import HttpResponse
 from django.http import Http404
 from django.template import loader
+from django.core.mail import send_mail
 
 # Create your views here.
 def main(request):
@@ -16,7 +17,28 @@ def myProjects(request):
     return render(request, 'choiStory/myProjects.html', {'posts': posts})
 
 def contactMe(request):
-    return render(request, 'choiStory/contactMe.html')
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        subject = request.POST.get("subject")
+        msg = request.POST.get("msg")
+        data = {
+            "Name" : name ,
+            "E-MAIL" : email,
+            "Subject" : subject,
+            "Message" : msg
+        }
+        message = '''
+        New message: {}
+        
+        From: {}
+        '''.format(data["Message"], data["E-MAIL"])
+        send_mail(data["Subject"], message, '', ["kk6962289@gmail.com"])
+
+    return render(request, 'choiStory/contactMe.html', {})
+
+# def contactMe(request):
+#     return render(request, 'choiStory/contactMe.html')
 
 def post_detail(request, id):
 	post = get_object_or_404(blog, id=id)
