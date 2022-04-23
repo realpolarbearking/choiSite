@@ -133,10 +133,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 CKEDITOR_UPLOAD_PATH = ''
 
-#gmail_send/settings.py
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'kk6962289@gmail.com'
-EMAIL_HOST_PASSWORD = 'uvbphmckwdsdloho' #past the key or password app here
+EMAIL_HOST_USER = 'Your G-Mail address' # Modify!
+EMAIL_HOST_PASSWORD = 'Your Key' # Modify!
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
